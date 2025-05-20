@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/mist.png" type="image/x-icon">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="busqueda">
+            <input type="text" placeholder="Ingrese el nombre de la ciudad" spellcheck="false">
+            <button><img src="img/search.png"></button>
+        </div>
+        <div class="error">
+            <p>Nombre de Ciudad Inválido</p>
+        </div>
+        <div class="weather">
+            <img src="img/mist.png" class="weather-icon">
+            <h1 class="temperatura">22°c</h1>
+            <h2 class="ciudad">New York</h2>
+            <div class="detalles">
+                <div class="col">
+                    <img src="img/humidity.png">
+                    <div>
+                        <p class="humedad">50%</p>
+                        <p>Humedad</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="img/wind.png">
+                    <div>
+                        <p class="viento">50 km/h</p>
+                        <p>Velocidad del Viento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const apiKey = "0396a1b7e2ea1bc9ed36c7300f1e853a";
+        const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=';
+        
+        const barraBusqueda = document.querySelector(".busqueda input");
+        const btnBusqueda = document.querySelector(".busqueda button");
+        const weatherIcon = document.querySelector(".weather-icon");
+
+        async function comprobarClima(ciudad){
+            const respuesta = await fetch(apiUrl + ciudad + `&appid=${apiKey}`);
+            
+            if(respuesta.status == 404){
+                document.querySelector(".error").style.display = "block";
+                document.querySelector(".weather").style.display = "none";
+            }else{
+                var data = await respuesta.json(); 
+
+                // Modificar Datos del Clima
+                const nombreCiudad = document.querySelector(".ciudad");
+                nombreCiudad.innerHTML = data.name;
+
+                const temperatura = document.querySelector(".temperatura");
+                temperatura.innerHTML = Math.round(data.main.temp) + "°c";
+
+                const humedad = document.querySelector(".humedad");
+                humedad.innerHTML = data.main.humidity + "%";
+
+                const viento = document.querySelector(".viento");
+                viento.innerHTML = data.wind.speed + "km/h";
+
+                // Modificar la imágen dependiendo del clima
+                if(data.weather[0].main == "Clouds"){
+                    weatherIcon.src = "img/clouds.png";
+                }
+                else if (data.weather[0].main == "Clear"){
+                    weatherIcon.src = "img/clear.png";
+                }
+                else if (data.weather[0].main == "Rain"){
+                    weatherIcon.src = "img/rain.png";
+                }
+                else if (data.weather[0].main == "Drizzle"){
+                    weatherIcon.src = "img/drizzle.png";
+                }   
+                else if (data.weather[0].main == "Mist"){
+                    weatherIcon.src = "img/mist.png";
+                }    
+
+                document.querySelector(".weather").style.display = "block";
+                document.querySelector(".error").style.display = "none";
+
+            }
+        }
+
+
+        btnBusqueda.addEventListener("click", function(){
+            comprobarClima(barraBusqueda.value);
+        })
+    </script>
+</body>
+</html>
