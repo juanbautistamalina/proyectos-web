@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url(img/wallpaper.png);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.contenedor-principal {
+    margin: auto;
+    border-radius: 50%;
+    background-color: #f5f5f5; 
+    width: 350px;
+    height: 350px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.3); 
+    flex-wrap: wrap;
+}
+
+.contenedor-botones {
+    padding: 20px;
+}
+
+/* Cronómetro */
+#cronometro {
+    width: 100%;
+    font-size: 3.5em;
+    user-select: none;
+    font-family: "Roboto Mono", monospace;
+    margin-top: 50px;
+    color: #333; 
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+}
+
+.boton {
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    font-size: 2em;
+    border-radius: 50%;
+    border: none;
+    margin: 0 15px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); 
+    transition: box-shadow 0.3s ease; 
+}
+
+.boton:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); 
+    opacity: 0.9;
+}
+
+#boton-inicio-pausa.iniciar,
+#boton-inicio-pausa.iniciar i {
+    background-color: #8ded71; 
+}
+
+#boton-inicio-pausa.pausar,
+#boton-inicio-pausa.pausar i {
+    background-color: #ffe85b; 
+}
+
+#boton-reiniciar {
+    background-color: #E94E77; 
+}
