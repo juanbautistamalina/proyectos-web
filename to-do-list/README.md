@@ -1,10 +1,5 @@
 #  To-Do List 📌
 
-## Enlace 🔗
-
-[**To-Do List**](https://juanbautistamalina.github.io/to-do-list/)
-
-
 ## Características
 
 - Añadir nuevas tareas.
@@ -36,7 +31,3 @@ No se necesita instalación. Solo descarga los archivos y abre `index.html` en t
 2. **Añadir una Tarea:** Escribe la tarea en el campo de texto y haz clic en el botón "Add".
 3. **Marcar como Completada:** Haz clic en el icono de la tarea para marcarla como completada. El icono cambiará y la tarea se tachará.
 4. **Eliminar una Tarea:** Haz clic en la "X" a la derecha de la tarea para eliminarla.
-
-
-## Galería 📷
-![img](https://github.com/juanbautistamalina/to-do-list/assets/104845721/af3d3b53-c33d-4669-b83c-663e93f4d31c)
