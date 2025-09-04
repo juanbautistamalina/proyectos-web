@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Producto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="product">
+            <div class="gallery">
+                <img src="img/img1.png" id="productImg">
+                <div class="controls">
+                    <span class="btn active"></span>
+                    <span class="btn"></span>
+                    <span class="btn"></span>
+                </div>
+            </div>
+            <div class="details">
+                <h1>ADIZERO SL</h1>
+                <h2>$171.999</h2>
+                <h3>30% DESCUENTO</h3>
+                <p>Zapatillas de running ligeras y cómodas con suela de alta amortiguación, malla transpirable y refuerzos laterales para estabilidad en todo tipo de terreno. Perfectas para maximizar tu rendimiento en cada carrera</p>
+
+                <form>
+                    <div class="size-select">
+                        <p>Talles</p>
+                        <label for="small">
+                            <input type="radio" name="size-select" id="small">
+                            <span>38</span>
+                        </label>
+                        <label for="medium">
+                            <input type="radio" name="size-select" id="medium">
+                            <span>39</span>
+                        </label>
+                        <label for="large">
+                            <input type="radio" name="size-select" id="large">
+                            <span>40</span>
+                        </label>
+                        <label for="xl-large">
+                            <input type="radio" name="size-select" id="xl-large">
+                            <span>42</span>
+                        </label>
+                        <label for="xx-large">
+                            <input type="radio" name="size-select" id="xx-large">
+                            <span>45</span>
+                        </label>
+                    </div>
+
+                    <div class="color-select">
+                        <p>Color</p>
+                        <label for="red">
+                            <input type="radio" name="color" id="red">
+                            <span class="color-1"></span>
+                        </label>
+                        <label for="cyan">
+                            <input type="radio" name="color" id="cyan">
+                            <span class="color-2"></span>
+                        </label>
+                        <label for="gray">
+                            <input type="radio" name="color" id="gray">
+                            <span class="color-3"></span>
+                        </label>
+                        <label for="black">
+                            <input type="radio" name="color" id="black">
+                            <span class="color-4"></span>
+                        </label>
+                    </div>
+
+                    <div class="quantity-select">
+                        <p>Cantidad</p>
+                        <input type="number" value="1">
+                    </div>
+
+                    <button>Comprar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
